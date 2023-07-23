@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @jobapplication %>
+
+<% if @jobapplication.user == current_user %>
+  <div class="text-center edit-links">
+    <%= link_to "Editar este post", edit_jobapplication_path(@jobapplication) %> |
+    <%= link_to "Lista de posts", jobapplications_path %>
+  </div>
+<% else %>
+  < class="text-center edit-links">
+    <%= link_to "Lista de posts", jobapplications_path %>
+  </div>
+<% end %>
+

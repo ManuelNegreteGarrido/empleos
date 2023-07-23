@@ -1,0 +1,10 @@
+<div class="form-wrapper">
+  <h2>Actualizar un post</h2>
+  <%= render "form", post: @jobapplication %>
+</div>
+
+<div class="text-center edit-links">
+  <%= link_to "Mirá este post", @jobapplication %> |
+  <%= link_to "Eliminar este Post", post_path(@jobapplication), data: { turbo_method: :delete, turbo_confirm: "¿Estás segura que quieres eliminar este post?" } %> |
+  <%= link_to "Lista de posts", jobapplication_path %>
+</div>

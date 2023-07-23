@@ -1,0 +1,30 @@
+<div id="<%= dom_id jobapplication %>" class="posts-wrapper row">
+  <div class="post">
+    <div class="image center-block">
+      <%= image_tag jobapplication.squared_img, class:'img-fluid' %>
+    </div>
+    <div class="post-bottom">
+      <div class="post-head">
+        <div class="avatar">
+          <%= image_tag "https://robohash.org/#{post.user&.email}.png?set=set4" %>
+        </div>
+        <div class="user-name">
+          <%= jobapplication.user_name if jobapplication.user %>
+        </div>
+        <div class="time-ago">
+          <%= l jobapplication.created_at, format: :short %>
+        </div>
+      </div>
+      <div class="description">
+        <%= jobapplication.description %>
+      </div>
+      <hr>
+      <div id="commentarios">
+        <% jobapplication.commentarios.each do |commentario| %>
+          <%= render "commentarios/commentario", commentario: commentario %>
+        <% end %>
+      </div>
+    </div>
+    <%= render "commentarioss/new", jobapplication: jobapplication %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div id="<%= dom_id commentario %>" class="comment">
+  <div class="user-name">
+    <%= commentario.user.name %>
+  </div>
+  <div class="comment-content">
+    <%= commentario.content %>
+  </div>
+  <div class="time-ago">
+    <%= time_ago_in_words commentario.created_at %>
+  </div>
+</div>
